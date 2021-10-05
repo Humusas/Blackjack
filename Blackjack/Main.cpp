@@ -3,7 +3,7 @@
 #include "Score.h"
 
 void screen();
-
+Score score;
 int main()
 {
 
@@ -37,8 +37,22 @@ int main()
     int start;
     bool isGameRunning = true;
     int newCard;
-    Cards cards;
-    Score score;
+    const int typeNumber = 4;
+    const int valueNumber = 13;
+    Cards deck[typeNumber][valueNumber] = { {},
+                                            {},
+                                            {},
+                                            {}};
+    //create a deck with 52 cards, then select a random card.
+
+    for (int i = 0; i < typeNumber; i++)
+    {
+        for (int j = 0; j < valueNumber; j++)
+        {
+
+        }
+    }
+    
 
     
 
@@ -87,8 +101,8 @@ void screen()
     system("CLS");
 
     std::cout << "|==========================================|\n";
-    std::cout << "| YOUR points :" << score.;
-        std::cout << "|==========================================|\n";
+    std::cout << "| YOUR points :"; score.GetScore();
+    std::cout << "|==========================================|\n";
     std::cout << std::endl;
     std::cout << std::endl;
 
