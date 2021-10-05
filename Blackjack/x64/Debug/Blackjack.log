@@ -1,5 +1,9 @@
 ﻿  Main.cpp
-C:\Users\sip0267\Desktop\Blackjack\Blackjack\Main.cpp(49,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\sip0267\Desktop\Blackjack\Blackjack\Main.cpp(61,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\sip0267\Desktop\Blackjack\Blackjack\Main.cpp(85,9): error C2065: 'cards': undeclared identifier
+C:\Users\sip0267\Desktop\Blackjack\Blackjack\Main.cpp(86,9): error C2065: 'cards': undeclared identifier
   Score.cpp
-C:\Users\sip0267\Desktop\Blackjack\Blackjack\Score.cpp(8,20): error C2677: binary '+': no global operator found which takes type 'Value' (or there is no acceptable conversion)
+C:\Users\sip0267\Desktop\Blackjack\Blackjack\Score.cpp(8,25): error C2440: 'static_cast': cannot convert from 'Cards' to 'int'
+C:\Users\sip0267\Desktop\Blackjack\Blackjack\Score.cpp(8,2): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Users\sip0267\Desktop\Blackjack\Blackjack\Score.cpp(9,20): error C2677: binary '+': no global operator found which takes type 'Value' (or there is no acceptable conversion)
   Generating Code...
