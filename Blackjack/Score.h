@@ -1,7 +1,10 @@
 #pragma once
+#include "Cards.h"
 
 class Score
 {
+	//Score();
+	//~Score();
 
 public:
 
@@ -10,7 +13,7 @@ public:
 
 private:
 
-
+	Cards m_card;
 	int m_score;
 
 };

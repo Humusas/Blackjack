@@ -3,10 +3,10 @@
 #include <iostream>
 
 
-
 int Score::SetScore()
 {
-	m_score = m_score + Cards::m_value;
+	m_score = m_score + m_card.GetValue();
+	return m_score;
 
 }
 
