@@ -1,5 +1,8 @@
 #include <iostream>
 #include "Cards.h"
+#include "Score.h"
+
+void screen();
 
 int main()
 {
@@ -35,6 +38,7 @@ int main()
     bool isGameRunning = true;
     int newCard;
     Cards cards;
+    Score score;
 
     
 
@@ -63,14 +67,14 @@ int main()
 
     while (isGameRunning)
     {
-        
+        screen();
         cards.SetType();
         cards.SetValue();
         
 
         std::cout << "Press 1 for another random card\n";
         std::cin >> newCard;
-    
+        std::cout<< std::endl;
     }
     
 
@@ -78,4 +82,15 @@ int main()
 	return 0;
 }
 
+void screen()
+{
+    system("CLS");
+
+    std::cout << "|==========================================|\n";
+    std::cout << "| YOUR points :" << score.;
+        std::cout << "|==========================================|\n";
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+}
 

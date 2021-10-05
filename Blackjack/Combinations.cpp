@@ -10,11 +10,11 @@ void Combinations::CheckCombinations()
 {
 	int matrix[4][13];
 
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 5; i++)
 	{
-		for (int j = 0; j < 13; j++)
+		for (int j = 0; j < 14; j++)
 		{
-			std::cout << i
+			std::cout << i;
 		}
 	}
 

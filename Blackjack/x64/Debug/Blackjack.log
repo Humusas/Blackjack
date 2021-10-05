@@ -1,0 +1,10 @@
+﻿  Main.cpp
+C:\Users\sip0267\Desktop\Blackjack\Blackjack\Main.cpp(45,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\sip0267\Desktop\Blackjack\Blackjack\Main.cpp(88,39): error C2065: 'score': undeclared identifier
+C:\Users\sip0267\Desktop\Blackjack\Blackjack\Main.cpp(89,14): error C2228: left of '.cout' must have class/struct/union
+  Score.cpp
+C:\Users\sip0267\Desktop\Blackjack\Blackjack\Score.cpp(9,36): error C2597: illegal reference to non-static member 'Cards::m_value'
+C:\Users\sip0267\Desktop\Blackjack\Blackjack\Score.cpp(9): message : see declaration of 'Cards::m_value'
+C:\Users\sip0267\Desktop\Blackjack\Blackjack\Score.cpp(9,36): error C3867: 'Cards::m_value': non-standard syntax; use '&' to create a pointer to member
+C:\Users\sip0267\Desktop\Blackjack\Blackjack\Score.cpp(9,36): error C2568: '+': unable to resolve function overload
+  Generating Code...
