@@ -31,6 +31,8 @@ class Cards
 {
 public:
 
+	//void SetPoints();
+
 	Value GetValue();
 	void SetValue();
 
