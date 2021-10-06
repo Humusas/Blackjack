@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Cards.h"
 #include "Score.h"
+#include <ctime>
 
 void screen();
 Score score;
@@ -39,6 +40,7 @@ int main()
     int newCard;
     const int typeNumber = 4;
     const int valueNumber = 13;
+
     Cards deck[typeNumber][valueNumber] = { {},
                                             {},
                                             {},
