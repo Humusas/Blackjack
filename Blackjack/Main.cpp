@@ -41,6 +41,7 @@ int main()
     const int typeNumber = 4;
     const int valueNumber = 13;
 
+    Cards cards;
     Cards deck[typeNumber][valueNumber] = { {},
                                             {},
                                             {},
@@ -103,7 +104,7 @@ void screen()
     system("CLS");
 
     std::cout << "|==========================================|\n";
-    std::cout << "| YOUR points :"; score.GetScore();
+    std::cout << "| YOUR points :"<<  score.GetScore()<<std::endl;
     std::cout << "|==========================================|\n";
     std::cout << std::endl;
     std::cout << std::endl;
