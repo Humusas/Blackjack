@@ -2,16 +2,67 @@
 #include "Cards.h"
 
 
+Cards::Cards()
+{
+    m_type = static_cast<Type>(NULL);
+    m_value = static_cast<Value>(NULL);
+    m_points = 0;
+    m_choice = 0;
+    m_taken = false;
+}
+//getters
 Value Cards::GetValue()
 {
-    srand(time(NULL));
     return m_value;
 }
 
-void Cards::SetValue()
+bool Cards::GetIsTaken()
 {
-    m_value = static_cast<Value>(rand() % static_cast<int>(Value::King) + 2); // 2-14
-    
+    return m_taken;
+}
+
+Type Cards::GetType()
+{
+    return m_type;
+}
+//setters
+void Cards::SetIsTaken(bool taken)
+{
+    m_taken = taken;
+}
+
+void Cards::SetValue(int value)
+{
+    m_value = static_cast<Value>(value);
+}
+
+void Cards::SetType(int type)
+{
+    m_type = static_cast<Type>(type);
+}
+
+void Cards::PrintType()
+{
+    if (m_type == Type::Clubs)
+    {
+        std::cout << " of clubs\n";
+    }
+    else if (m_type == Type::Diamonds)
+    {
+        std::cout << " of diamonds\n";
+    }
+    else if(m_type == Type::Hearts)
+    {
+        std::cout << " of hearts\n";
+    }
+    else if (m_type == Type::Spades)
+    {
+        std::cout << " of spades\n";
+    }
+}
+
+void Cards::PrintPicture()
+{
     //if you get jack, queen or king the amount of points is 10
     if (m_value == Value::Two)
     {
@@ -52,18 +103,14 @@ void Cards::SetValue()
     else if (m_value == Value::Jack)
     {
         m_picture.jack();
-        m_value = static_cast<Value>(10);
-
     }
     else if (m_value == Value::Queen)
     {
         m_picture.queen();
-        m_value = static_cast<Value>(10);
     }
     else if (m_value == Value::King)
     {
         m_picture.king();
-        m_value = static_cast<Value>(10);
     }
     else if (m_value == Value::Ace)
     {
@@ -80,39 +127,23 @@ void Cards::SetValue()
             m_value = static_cast<Value>(11);
         }
     }
-    std::cout << static_cast<int>(m_value);
-
+    if (m_value == Value::Jack)
+    {
+        std::cout << "Jack";
+    }
+    else if (m_value == Value::Queen)
+    {
+        std::cout << "Queen";
+    }
+    else if (m_value == Value::King)
+    {
+        std::cout << "King";
+    }
+    else
+    {
+        std::cout << static_cast<int>(m_value);
+    }
+    
 }
 
-Type Cards::GetType()
-{
-    srand(time(NULL));
-    return m_type;
-}
-
-
-
-void Cards::SetType()
-{
-    m_type = static_cast<Type>(rand() % static_cast<int>(Type::Spades) + 1); //1-4
-
-    if (m_type == Type::Clubs)
-    {
-        std::cout << "Clubs" << std::endl;
-    }
-    else if (m_type == Type::Diamonds)
-    {
-        std::cout << "Diamonds" << std::endl;
-    }
-    else if (m_type == Type::Hearts)
-    {
-        std::cout << "Hearts" << std::endl;
-    }
-    else if (m_type == Type::Spades)
-    {
-        std::cout << "Spades" << std::endl;
-    }
-}
-
-//52 possible cards in total,
 

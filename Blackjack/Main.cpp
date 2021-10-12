@@ -1,10 +1,10 @@
 #include <iostream>
 #include "Cards.h"
-#include "Score.h"
 #include <ctime>
+#include "Score.h"
 
-void screen();
 Score score;
+
 int main()
 {
 
@@ -38,30 +38,58 @@ int main()
     int start;
     bool isGameRunning = true;
     int newCard;
+    int randomType, randomValue;
     const int typeNumber = 4;
     const int valueNumber = 13;
+    void screen();
 
-    Cards cards;
-    Cards deck[typeNumber][valueNumber] = { {},
-                                            {},
-                                            {},
-                                            {}};
-    //create a deck with 52 cards, then select a random card.
+    
+    //========================================cards
+    //clubs
+    Cards   twoClubs, threeClubs, fourClubs, fiveClubs, sixClubs, sevenClubs,
+            eightClubs, nineClubs, tenClubs, jackClubs, queenClubs, kingClubs, aceClubs;
 
+    Cards   twoHearts, threeHearts, fourHearts, fiveHearts, sixHearts, sevenHearts,
+            eightHearts, nineHearts, tenHearts, jackHearts, queenHearts, kingHearts, aceHearts;
+
+    Cards   twoSpades, threeSpades, fourSpades, fiveSpades, sixSpades, sevenSpades,
+            eightSpades, nineSpades, tenSpades, jackSpades, queenSpades, kingSpades, aceSpades;
+
+    Cards   twoDiamonds, threeDiamonds, fourDiamonds, fiveDiamonds, sixDiamonds, sevenDiamonds,
+            eightDiamonds, nineDiamonds, tenDiamonds, jackDiamonds, queenDiamonds, kingDiamonds, aceDiamonds;
+    //==============================================
+
+    //create a deck, randomly choose a number 1-4 and 1-13. If the card is taken, add a flag (taken).
+    //When randomizing if taken, randomize again. If ace, choose value 1 or 11.
+    
+    Cards deck[typeNumber][valueNumber] = { {twoClubs, threeClubs, fourClubs, fiveClubs, sixClubs,
+                                            sevenClubs, eightClubs, nineClubs, tenClubs, jackClubs,
+                                            queenClubs, kingClubs, aceClubs},
+
+                                           {twoHearts, threeHearts, fourHearts, fiveHearts, sixHearts,
+                                            sevenHearts, eightHearts, nineHearts, tenHearts, jackHearts,
+                                            queenHearts, kingHearts, aceHearts},
+
+                                           {twoSpades, threeSpades, fourSpades, fiveSpades, sixSpades,
+                                            sevenSpades, eightSpades, nineSpades, tenSpades, jackSpades,
+                                            queenSpades, kingSpades, aceSpades},
+
+                                            {twoDiamonds, threeDiamonds, fourDiamonds, fiveDiamonds, sixDiamonds,
+                                             sevenDiamonds, eightDiamonds, nineDiamonds, tenDiamonds, jackDiamonds,
+                                             queenDiamonds, kingDiamonds, aceDiamonds}};
+
+  
     for (int i = 0; i < typeNumber; i++)
     {
         for (int j = 0; j < valueNumber; j++)
         {
-
+            deck[i][j].SetType(i);
+            deck[i][j].SetValue(j+2);
         }
     }
-    
 
     
-
- 
     
-    srand(time(NULL));
 
     std::cout << "|==========================================|\n";
     std::cout << "|Welcome to blackjack. Will you win against| \n|me or lose? Only one way to find out...   |";
@@ -84,14 +112,22 @@ int main()
 
     while (isGameRunning)
     {
-        screen();
-        cards.SetType();
-        cards.SetValue();
-        
-
-        std::cout << "Press 1 for another random card\n";
+        randomType = rand() % typeNumber + 1;
+        randomValue = rand() % valueNumber + 2;
+        std::cout << "Press 1 for a random card\n";
         std::cin >> newCard;
-        std::cout<< std::endl;
+        std::cout << std::endl;
+
+        while (deck[randomType][randomValue].GetIsTaken())
+        {
+            randomType = rand() % typeNumber + 1;
+            randomValue = rand() % valueNumber + 2;
+        }
+
+        deck[randomType][randomValue].SetIsTaken(true);
+        deck[randomType][randomValue].PrintPicture();
+        deck[randomType][randomValue].PrintType();
+        screen();
     }
     
 
@@ -101,10 +137,10 @@ int main()
 
 void screen()
 {
-    system("CLS");
+    //system("CLS");
 
     std::cout << "|==========================================|\n";
-    std::cout << "| YOUR points :"<<  score.GetScore()<<std::endl;
+    score.CountScore();
     std::cout << "|==========================================|\n";
     std::cout << std::endl;
     std::cout << std::endl;
