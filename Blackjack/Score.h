@@ -8,12 +8,12 @@ class Score
 
 public:
 
-	void SetPoints();
+	void AddPoints(int points); //add card points to score
 
-	int SetScore(int score);
+	void SetScore(int score); //resets the score to 0 when 21 or more is reached
 
 
-	int GetScore();
+	int GetScore();//use this to output the score on the screen
 
 private:
 

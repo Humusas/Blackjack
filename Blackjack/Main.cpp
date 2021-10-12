@@ -4,7 +4,9 @@
 #include <ctime>
 
 void screen();
+
 Score score;
+
 int main()
 {
 
@@ -35,13 +37,14 @@ int main()
 
 
     //=========================VARIABLES
-    int start;
     bool isGameRunning = true;
     int newCard;
+    int start;
     const int typeNumber = 4;
     const int valueNumber = 13;
 
     Cards cards;
+    
     Cards deck[typeNumber][valueNumber] = { {},
                                             {},
                                             {},
@@ -87,11 +90,28 @@ int main()
         screen();
         cards.SetType();
         cards.SetValue();
-        
+        cards.SetPoints();
 
-        std::cout << "Press 1 for another random card\n";
-        std::cin >> newCard;
-        std::cout<< std::endl;
+        if (score.GetScore() < 21)
+        {
+            score.SetScore(0);
+            score.GetScore();
+
+
+            std::cout << "Press 1 for another random card\n";
+            std::cin >> newCard;
+            std::cout << std::endl;
+        }
+        else if (score.GetScore() == 21)
+        {
+            std::cout << "you win\n";
+        }
+        else
+        {
+            std::cout << "you lost\n";
+        }
+
+
     }
     
 

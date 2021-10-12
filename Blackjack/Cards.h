@@ -31,7 +31,7 @@ class Cards
 {
 public:
 
-	//void SetPoints();
+	void SetPoints();
 
 	Value GetValue();
 	void SetValue();
@@ -43,6 +43,7 @@ public:
 private:
 
 	int m_points;
+
 	Type m_type;
 	Value m_value;
 	Pictures m_picture;

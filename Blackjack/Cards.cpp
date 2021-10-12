@@ -2,10 +2,74 @@
 #include "Cards.h"
 
 
+
 Value Cards::GetValue()
 {
     srand(time(NULL));
     return m_value;
+}
+
+void Cards::SetPoints()
+{
+    if (m_value == Value::Two)
+    {
+        m_points=2;
+    }
+    else if (m_value == Value::Three)
+    {
+        m_points=3;
+    }
+    else if (m_value == Value::Four)
+    {
+        m_points = 4;
+    }
+    else if (m_value == Value::Five)
+    {
+        m_points = 5;
+    }
+    else if (m_value == Value::Six)
+    {
+        m_points = 6;
+    }
+    else if (m_value == Value::Seven)
+    {
+        m_points = 7;
+    }
+    else if (m_value == Value::Eight)
+    {
+        m_points = 8;
+    }
+    else if (m_value == Value::Nine)
+    {
+        m_points = 9;
+    }
+    else if (m_value == Value::Ten)
+    {
+        m_points = 10;
+    }
+    else if (m_value == Value::Jack)
+    {
+        m_points = 10;
+    }
+    else if (m_value == Value::Queen)
+    {
+        m_points = 10;
+    }
+    else if (m_value == Value::King)
+    {
+        m_points = 10;
+    }
+    else if (m_value == Value::Ace)
+    {
+        if (m_choice == 1)
+        {
+            m_points = 1;
+        }
+        else if (m_choice == 2)
+        {
+            m_points = 11;
+        }
+    }
 }
 
 void Cards::SetValue()

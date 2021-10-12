@@ -3,55 +3,57 @@
 #include <iostream>
 
 
-void Score::SetPoints()
+void Score::AddPoints(int points)
 {
-    if (m_value == Value::Two)
+    m_score = m_score + points;
+
+    /*if (Cards::GetValue() == Type.GetType())
     {
-        m_points = 2;
+        m_score = m_score +2;
     }
     else if (m_value == Value::Three)
     {
-        m_points = 3;
+        m_score = m_score + 3;
     }
     else if (m_value == Value::Four)
     {
-        m_points = 4;
+        m_score = m_score + 4;
     }
     else if (m_value == Value::Five)
     {
-        m_points = 5;
+        m_score = m_score + 5;
     }
     else if (m_value == Value::Six)
     {
-        m_points = 6;
+        m_score = m_score + 6;
     }
     else if (m_value == Value::Seven)
     {
-        m_points = 7;
+        m_score = m_score + 7;
     }
     else if (m_value == Value::Eight)
     {
-        m_points = 8;
+        m_score = m_score + 8;
     }
     else if (m_value == Value::Nine)
     {
-        m_points = 9;
+        m_score = m_score + 9;
     }
     else if (m_value == Value::Ten)
     {
-        m_points = 10;
+        m_score = m_score + 10;
     }
     else if (m_value == Value::Jack)
     {
-        m_points = 10;
+        m_score = m_score + 10;
     }
     else if (m_value == Value::Queen)
     {
-        m_points = 10;
+        m_score = m_score + 10;
     }
     else if (m_value == Value::King)
     {
-        m_points = 10;
+        m_score = m_score + 10;
     }
     else if (m_value == Value::Ace)
     {
@@ -66,15 +68,14 @@ void Score::SetPoints()
         {
             m_value = static_cast<Value>(11);
         }
-    }
+    }*/
 }
 
-int Score::SetScore(int score)
+void Score::SetScore(int score)
 {
 	
 	m_score = score;
 
-	return m_score;
 
 }
 

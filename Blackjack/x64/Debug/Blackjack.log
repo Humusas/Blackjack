@@ -1,5 +1,5 @@
-﻿  Main.cpp
-C:\Users\SIP0267\Desktop\Blackjack\Blackjack\Main.cpp(64,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  Cards.cpp
+C:\Users\Dell\Desktop\humus\humus\Blackjack\Blackjack\Cards.cpp(8,11): error C3861: 'time': identifier not found
+C:\Users\Dell\Desktop\humus\humus\Blackjack\Blackjack\Cards.cpp(153,11): error C3861: 'time': identifier not found
   Score.cpp
   Generating Code...
-  Blackjack.vcxproj -> C:\Users\SIP0267\Desktop\Blackjack\x64\Debug\Blackjack.exe
