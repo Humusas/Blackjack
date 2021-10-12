@@ -53,9 +53,4 @@ private:
 	int m_choice;
 	bool m_taken;
 
-
-
-
-
-
 };

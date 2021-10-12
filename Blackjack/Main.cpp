@@ -112,8 +112,8 @@ int main()
 
     while (isGameRunning)
     {
-        randomType = rand() % typeNumber + 1;
-        randomValue = rand() % valueNumber + 2;
+        randomType = rand() % typeNumber;  //0 - 3
+        randomValue = rand() % valueNumber; //0 - 12
         std::cout << "Press 1 for a random card\n";
         std::cin >> newCard;
         std::cout << std::endl;
@@ -145,5 +145,10 @@ void screen()
     std::cout << std::endl;
     std::cout << std::endl;
 
+	int matrix[4][3];
+
+	matrix[0][0] = 12;
+
+	int num = matrix[2][1];
 }
 
