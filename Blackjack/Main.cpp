@@ -114,6 +114,7 @@ int main()
     {
         randomType = rand() % typeNumber;  //0 - 3
         randomValue = rand() % valueNumber; //0 - 12
+
         std::cout << "Press 1 for a random card\n";
         std::cin >> newCard;
         std::cout << std::endl;
@@ -122,12 +123,18 @@ int main()
         {
             randomType = rand() % typeNumber + 1;
             randomValue = rand() % valueNumber + 2;
+
+            score.GetNewScore();
+            score.CountScore();
+           
         }
 
         deck[randomType][randomValue].SetIsTaken(true);
         deck[randomType][randomValue].PrintPicture();
         deck[randomType][randomValue].PrintType();
+
         screen();
+
     }
     
 
@@ -139,16 +146,18 @@ void screen()
 {
     //system("CLS");
 
-    std::cout << "|==========================================|\n";
-    score.CountScore();
-    std::cout << "|==========================================|\n";
-    std::cout << std::endl;
-    std::cout << std::endl;
 
 	int matrix[4][3];
 
 	matrix[0][0] = 12;
 
 	int num = matrix[2][1];
+
+    std::cout << "|==========================================|\n";
+    score.CountScore();
+    score.GetNewScore();
+    std::cout << "|==========================================|\n";
+    std::cout << std::endl;
+    std::cout << std::endl;
 }
 

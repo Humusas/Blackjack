@@ -11,7 +11,7 @@ enum class Type
 	Diamonds
 };
 
-enum class Value
+enum class Value //points
 {
 	Two = 2,
 	Three,
@@ -33,7 +33,12 @@ class Cards
 public:
 
 	Cards();
+
+	int GetPoints();
 	Value GetValue();
+
+	
+
 	Type GetType();
 	bool GetIsTaken();
 
@@ -46,9 +51,10 @@ public:
 
 private:
 
-	int m_points;
+	int m_points; //from enum Value make int points
+
 	Type m_type;
-	Value m_value;
+	Value m_value; //card value ACE: 11 or 1
 	Pictures m_picture;
 	int m_choice;
 	bool m_taken;

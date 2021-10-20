@@ -15,6 +15,11 @@ Value Cards::GetValue()
 	return m_value;
 }
 
+int Cards::GetPoints()
+{
+	return m_points;
+}
+
 bool Cards::GetIsTaken()
 {
 	return m_taken;
@@ -63,9 +68,9 @@ void Cards::PrintType()
 	}
 }
 
-void Cards::PrintPicture(char num) 
+void Cards::PrintPicture() //(char num)
 {
-
+/*
 	std::cout << "____________" << std::endl;
 	std::cout << "|          |" << std::endl;
 	std::cout << "| num        |" << std::endl;
@@ -74,56 +79,91 @@ void Cards::PrintPicture(char num)
 	std::cout << "|          |" << std::endl;
 	std::cout << "|        num |" << std::endl;
 	std::cout << "|__________|" << std::endl;
-}
+}*/
 
 	//if you get jack, queen or king the amount of points is 10
 	if (m_value == Value::Two)
 	{
 		m_picture.two();
+		m_points = 2;
+		std::cout << m_points << std::endl;
 	}
 	else if (m_value == Value::Three)
 	{
 		m_picture.three();
+		m_points = 3;
+		std::cout << m_points << std::endl;
+
 	}
 	else if (m_value == Value::Four)
 	{
 		m_picture.four();
+		m_points = 4;
+		std::cout << m_points << std::endl;
+
 	}
 	else if (m_value == Value::Five)
 	{
 		m_picture.five();
+		m_points = 5;
+		std::cout << m_points << std::endl;
+
 	}
 	else if (m_value == Value::Six)
 	{
 		m_picture.six();
+		m_points = 6;
+		std::cout << m_points << std::endl;
+
 	}
 	else if (m_value == Value::Seven)
 	{
 		m_picture.seven();
+		m_points = 7;
+		std::cout << m_points << std::endl;
+
 	}
 	else if (m_value == Value::Eight)
 	{
 		m_picture.eight();
+		m_points = 8;
+		std::cout << m_points << std::endl;
+
 	}
 	else if (m_value == Value::Nine)
 	{
 		m_picture.nine();
+		m_points = 9;
+		std::cout << m_points << std::endl;
+
 	}
 	else if (m_value == Value::Ten)
 	{
 		m_picture.ten();
+		m_points = 10;
+		std::cout << m_points << std::endl;
+
 	}
 	else if (m_value == Value::Jack)
 	{
 		m_picture.jack();
+		m_points = 10;
+		std::cout << m_points << std::endl;
+		std::cout << "Jack" << std::endl;;
 	}
 	else if (m_value == Value::Queen)
 	{
 		m_picture.queen();
+		m_points = 10;
+		std::cout << m_points << std::endl;
+		std::cout << "Queen" << std::endl;;
 	}
 	else if (m_value == Value::King)
 	{
 		m_picture.king();
+		m_points = 10;
+		std::cout << m_points << std::endl;
+		std::cout << "King" << std::endl;
 	}
 	else if (m_value == Value::Ace)
 	{
@@ -134,29 +174,18 @@ void Cards::PrintPicture(char num)
 		if (m_choice == 1)
 		{
 			m_value = static_cast<Value>(1);
+			m_points = 1;
+			std::cout << m_points << std::endl;
+			std::cout << "Ace" << std::endl;
 		}
 		else if (m_choice == 2)
 		{
 			m_value = static_cast<Value>(11);
+			m_points = 11;
+			std::cout << m_points << std::endl;
+			std::cout << "Ace" << std::endl;
 		}
 	}
-	if (m_value == Value::Jack)
-	{
-		std::cout << "Jack";
-	}
-	else if (m_value == Value::Queen)
-	{
-		std::cout << "Queen";
-	}
-	else if (m_value == Value::King)
-	{
-		std::cout << "King";
-	}
-	else
-	{
-		std::cout << static_cast<int>(m_value);
-	}
-
 }
 
 
