@@ -1,182 +1,191 @@
 #include <iostream>
 #include "Cards.h"
 
-
-
+Cards::Cards()
+{
+	m_points = 0;
+	m_choice = 0;
+	m_taken = false;
+	m_type = Type::Clubs;
+	m_value = Value::Two;
+}
+//getters
 Value Cards::GetValue()
 {
-    srand(time(NULL));
-    return m_value;
+	return m_value;
 }
 
-void Cards::SetPoints()
+int Cards::GetPoints()
 {
-    if (m_value == Value::Two)
-    {
-        m_points=2;
-    }
-    else if (m_value == Value::Three)
-    {
-        m_points=3;
-    }
-    else if (m_value == Value::Four)
-    {
-        m_points = 4;
-    }
-    else if (m_value == Value::Five)
-    {
-        m_points = 5;
-    }
-    else if (m_value == Value::Six)
-    {
-        m_points = 6;
-    }
-    else if (m_value == Value::Seven)
-    {
-        m_points = 7;
-    }
-    else if (m_value == Value::Eight)
-    {
-        m_points = 8;
-    }
-    else if (m_value == Value::Nine)
-    {
-        m_points = 9;
-    }
-    else if (m_value == Value::Ten)
-    {
-        m_points = 10;
-    }
-    else if (m_value == Value::Jack)
-    {
-        m_points = 10;
-    }
-    else if (m_value == Value::Queen)
-    {
-        m_points = 10;
-    }
-    else if (m_value == Value::King)
-    {
-        m_points = 10;
-    }
-    else if (m_value == Value::Ace)
-    {
-        if (m_choice == 1)
-        {
-            m_points = 1;
-        }
-        else if (m_choice == 2)
-        {
-            m_points = 11;
-        }
-    }
+	return m_points;
 }
 
-void Cards::SetValue()
+bool Cards::GetIsTaken()
 {
-    m_value = static_cast<Value>(rand() % static_cast<int>(Value::King) + 2); // 2-14
-    
-    //if you get jack, queen or king the amount of points is 10
-    if (m_value == Value::Two)
-    {
-        m_picture.two();
-    }
-    else if (m_value == Value::Three)
-    {
-        m_picture.three();
-    }
-    else if (m_value == Value::Four)
-    {
-        m_picture.four();
-    }
-    else if (m_value == Value::Five)
-    {
-        m_picture.five();
-    }
-    else if (m_value == Value::Six)
-    {
-        m_picture.six();
-    }
-    else if (m_value == Value::Seven)
-    {
-        m_picture.seven();
-    }
-    else if (m_value == Value::Eight)
-    {
-        m_picture.eight();
-    }
-    else if (m_value == Value::Nine)
-    {
-        m_picture.nine();
-    }
-    else if (m_value == Value::Ten)
-    {
-        m_picture.ten();
-    }
-    else if (m_value == Value::Jack)
-    {
-        m_picture.jack();
-        m_value = static_cast<Value>(10);
-
-    }
-    else if (m_value == Value::Queen)
-    {
-        m_picture.queen();
-        m_value = static_cast<Value>(10);
-    }
-    else if (m_value == Value::King)
-    {
-        m_picture.king();
-        m_value = static_cast<Value>(10);
-    }
-    else if (m_value == Value::Ace)
-    {
-        m_picture.ace();
-        //option for ace value
-        std::cout << "\n Which value would you like? Type 1 for value of 1 and type 2 for value of 11\n";
-        std::cin >> m_choice;
-        if (m_choice == 1)
-        {
-            m_value = static_cast<Value>(1);
-        }
-        else if (m_choice == 2)
-        {
-            m_value = static_cast<Value>(11);
-        }
-    }
-    std::cout << static_cast<int>(m_value);
-
+	return m_taken;
 }
 
 Type Cards::GetType()
 {
-    srand(time(NULL));
-    return m_type;
+	return m_type;
 }
-
-
-
-void Cards::SetType()
+//setters
+void Cards::SetIsTaken(bool taken)
 {
-    m_type = static_cast<Type>(rand() % static_cast<int>(Type::Spades) + 1); //1-4
-
-    if (m_type == Type::Clubs)
-    {
-        std::cout << "Clubs" << std::endl;
-    }
-    else if (m_type == Type::Diamonds)
-    {
-        std::cout << "Diamonds" << std::endl;
-    }
-    else if (m_type == Type::Hearts)
-    {
-        std::cout << "Hearts" << std::endl;
-    }
-    else if (m_type == Type::Spades)
-    {
-        std::cout << "Spades" << std::endl;
-    }
+	m_taken = taken;
 }
 
-//52 possible cards in total,
+void Cards::SetValue(int value)
+{
+	m_value = static_cast<Value>(value);
+}
+
+void Cards::SetType(int type)
+{
+	m_type = static_cast<Type>(type);
+}
+
+void Cards::PrintType()
+{
+	//why not use a switch?
+	//Consider printing the types externally
+
+	if (m_type == Type::Clubs)
+	{
+		std::cout << " of clubs\n";
+	}
+	else if (m_type == Type::Diamonds)
+	{
+		std::cout << " of diamonds\n";
+	}
+	else if (m_type == Type::Hearts)
+	{
+		std::cout << " of hearts\n";
+	}
+	else if (m_type == Type::Spades)
+	{
+		std::cout << " of spades\n";
+	}
+}
+
+void Cards::PrintPicture() //(char num)
+{
+/*
+	std::cout << "____________" << std::endl;
+	std::cout << "|          |" << std::endl;
+	std::cout << "| num        |" << std::endl;
+	std::cout << "|          |" << std::endl;
+	std::cout << "|          |" << std::endl;
+	std::cout << "|          |" << std::endl;
+	std::cout << "|        num |" << std::endl;
+	std::cout << "|__________|" << std::endl;
+}*/
+
+	//if you get jack, queen or king the amount of points is 10
+	if (m_value == Value::Two)
+	{
+		m_picture.two();
+		m_points = 2;
+		std::cout << m_points << std::endl;
+	}
+	else if (m_value == Value::Three)
+	{
+		m_picture.three();
+		m_points = 3;
+		std::cout << m_points << std::endl;
+
+	}
+	else if (m_value == Value::Four)
+	{
+		m_picture.four();
+		m_points = 4;
+		std::cout << m_points << std::endl;
+
+	}
+	else if (m_value == Value::Five)
+	{
+		m_picture.five();
+		m_points = 5;
+		std::cout << m_points << std::endl;
+
+	}
+	else if (m_value == Value::Six)
+	{
+		m_picture.six();
+		m_points = 6;
+		std::cout << m_points << std::endl;
+
+	}
+	else if (m_value == Value::Seven)
+	{
+		m_picture.seven();
+		m_points = 7;
+		std::cout << m_points << std::endl;
+
+	}
+	else if (m_value == Value::Eight)
+	{
+		m_picture.eight();
+		m_points = 8;
+		std::cout << m_points << std::endl;
+
+	}
+	else if (m_value == Value::Nine)
+	{
+		m_picture.nine();
+		m_points = 9;
+		std::cout << m_points << std::endl;
+
+	}
+	else if (m_value == Value::Ten)
+	{
+		m_picture.ten();
+		m_points = 10;
+		std::cout << m_points << std::endl;
+
+	}
+	else if (m_value == Value::Jack)
+	{
+		m_picture.jack();
+		m_points = 10;
+		std::cout << m_points << std::endl;
+		std::cout << "Jack" << std::endl;;
+	}
+	else if (m_value == Value::Queen)
+	{
+		m_picture.queen();
+		m_points = 10;
+		std::cout << m_points << std::endl;
+		std::cout << "Queen" << std::endl;;
+	}
+	else if (m_value == Value::King)
+	{
+		m_picture.king();
+		m_points = 10;
+		std::cout << m_points << std::endl;
+		std::cout << "King" << std::endl;
+	}
+	else if (m_value == Value::Ace)
+	{
+		m_picture.ace();
+		//option for ace value
+		std::cout << "\n Which value would you like? Type 1 for value of 1 and type 2 for value of 11\n";
+		std::cin >> m_choice;
+		if (m_choice == 1)
+		{
+			m_value = static_cast<Value>(1);
+			m_points = 1;
+			std::cout << m_points << std::endl;
+			std::cout << "Ace" << std::endl;
+		}
+		else if (m_choice == 2)
+		{
+			m_value = static_cast<Value>(11);
+			m_points = 11;
+			std::cout << m_points << std::endl;
+			std::cout << "Ace" << std::endl;
+		}
+	}
+}
+
 

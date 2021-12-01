@@ -4,13 +4,14 @@
 
 enum class Type
 {
-	Clubs = 1,
-	Diamonds,
+	//the allignment is the same as in the deck[][] matrix. DO NOT TOUCH
+	Clubs,
 	Hearts,
-	Spades
+	Spades,
+	Diamonds
 };
 
-enum class Value
+enum class Value //points
 {
 	Two = 2,
 	Three,
@@ -32,27 +33,33 @@ class Cards
 public:
 
 	void SetPoints();
+	Cards();
 
+	int GetPoints();
 	Value GetValue();
-	void SetValue();
+
+	
 
 	Type GetType();
-	void SetType();
-	void Matrix();
+	bool GetIsTaken();
+
+	void PrintPicture();
+	void PrintType();
+
+	void SetIsTaken(bool taken);
+	void SetValue(int value);
+	void SetType(int type);
 
 private:
+
+	int m_points; //from enum Value make int points
 
 	int m_points;
 
 	Type m_type;
-	Value m_value;
+	Value m_value; //card value ACE: 11 or 1
 	Pictures m_picture;
 	int m_choice;
-	int m_matrix[4][13];
-
-
-
-
-
+	bool m_taken;
 
 };

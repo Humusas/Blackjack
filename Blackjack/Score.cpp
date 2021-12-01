@@ -5,55 +5,53 @@
 
 void Score::AddPoints(int points)
 {
-    m_score = m_score + points;
-
-    /*if (Cards::GetValue() == Type.GetType())
+    if (m_value == Value::Two)
     {
-        m_score = m_score +2;
+        m_points = 2;
     }
     else if (m_value == Value::Three)
     {
-        m_score = m_score + 3;
+        m_points = 3;
     }
     else if (m_value == Value::Four)
     {
-        m_score = m_score + 4;
+        m_points = 4;
     }
     else if (m_value == Value::Five)
     {
-        m_score = m_score + 5;
+        m_points = 5;
     }
     else if (m_value == Value::Six)
     {
-        m_score = m_score + 6;
+        m_points = 6;
     }
     else if (m_value == Value::Seven)
     {
-        m_score = m_score + 7;
+        m_points = 7;
     }
     else if (m_value == Value::Eight)
     {
-        m_score = m_score + 8;
+        m_points = 8;
     }
     else if (m_value == Value::Nine)
     {
-        m_score = m_score + 9;
+        m_points = 9;
     }
     else if (m_value == Value::Ten)
     {
-        m_score = m_score + 10;
+        m_points = 10;
     }
     else if (m_value == Value::Jack)
     {
-        m_score = m_score + 10;
+        m_points = 10;
     }
     else if (m_value == Value::Queen)
     {
-        m_score = m_score + 10;
+        m_points = 10;
     }
     else if (m_value == Value::King)
     {
-        m_score = m_score + 10;
+        m_points = 10;
     }
     else if (m_value == Value::Ace)
     {
@@ -68,18 +66,41 @@ void Score::AddPoints(int points)
         {
             m_value = static_cast<Value>(11);
         }
-    }*/
+    }
 }
 
-void Score::SetScore(int score)
+int Score::SetScore(int score)
 {
-	
-	m_score = score;
-
-
+	//score - total score
+	//points - extra amount added to the total score
+	//for (m_card.GetValue() = 2; m_card.GetValue() < 15; m_card.GetValue() ++)
+	//{
+//	}
+	//
+	m_score = m_score + static_cast<int>(m_card.GetPoints());
+	m_score = m_score + m_newScore;
+	//m_something = m_something + m_something.GetPoints();
+	//std::cout << m_something << std::endl;
+	std::cout << m_score << std::endl;
+	std::cout << m_newScore << std::endl;
 }
+
+
 
 int Score::GetScore()
 {
 	return m_score;
+}
+
+int Score::AddScore(int score)
+{
+	m_score=m_score + score;
+	return m_score;
+}
+
+int Score::GetNewScore()
+{
+	m_newScore = m_card.GetPoints();
+	return m_newScore;
+	std::cout << m_newScore << std::endl;
 }
