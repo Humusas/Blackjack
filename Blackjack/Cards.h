@@ -54,7 +54,7 @@ private:
 
 	int m_points; //from enum Value make int points
 
-	int m_points;
+	//int m_points;
 
 	Type m_type;
 	Value m_value; //card value ACE: 11 or 1
