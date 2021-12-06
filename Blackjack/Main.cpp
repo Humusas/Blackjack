@@ -139,11 +139,10 @@ int main()
 
 void screen()
 {
-    system("CLS");
 
 
     std::cout << "|==========================================|\n";
-    score.GetNewScore();
+    std::cout<< score.GetNewScore()<<std::endl;
     std::cout << "|==========================================|\n";
     std::cout << std::endl;
     std::cout << std::endl;
